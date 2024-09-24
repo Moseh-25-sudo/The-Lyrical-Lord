@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module prompts a user for a song and returns the top 10 words from it that are used least frequently in the English-speaking world"""
+"""This module prompts the user to request for a song and returns the top 10 words from it that are used least frequently in the English-speaking world"""
 """Import modules and defines Request Headers for Words API get request"""
 
 import requests, re, operator
@@ -8,13 +8,13 @@ headers = {
     'x-rapidapi-key': "ENTER API KEY FOR WORDS API"
     }
 
-"""Prompt the user"""
+"""Prompting the user"""
 
 print('Enter an artist and song! Then see the words from the song that are used least frequently in the English-speaking world!', '\n')
 artist = input('Artist: ')
 song = input('Song: ')
 
-"""Fetch lyrics from lyrics.ovh based on user input and print them. Validate input data"""
+"""Fetching lyrics from lyrics.ovh based on user input and print them. Validate input data"""
 
 lyrics_dict = requests.get('https://api.lyrics.ovh/v1/{:}/{:}'.format(artist, song)).json()
 if lyrics_dict == None:
@@ -23,12 +23,12 @@ if lyrics_dict == None:
 lyrics = lyrics_dict.get('lyrics')
 print("Lyrics...", "\n", "\n", lyrics)
 
-"""Prepare lyrics for analysis by removing punctuation, replacing newlines, and splitting lyrics string into list of word sub-strings"""
+"""Preparing lyrics for analysis by removing punctuation, replacing newlines, and splitting lyrics string into list of word sub-strings"""
 
 mod_lyrics = re.sub(r'[^\w\s]','', lyrics.replace('\n', " "))
 words = mod_lyrics.split(" ")
 
-"""Fetch breakdown of all words from Words API and stores the frequency of each word in a dictionary"""
+"""Fetch the breakdown of all words from Words API and stores the frequency of each word in a dictionary"""
 
 result_dict = {}
 for word in words:
@@ -40,7 +40,7 @@ for word in words:
         else:
                        result_dict[word] = -1
 
-"""Generates a list of tuples based on dictionary items. Sorts words by frequency in ascending order and prints the first 10"""
+"""Generates a list of the tuples based on dictionary items. Sorts words by frequency in ascending order and prints the first 10"""
 
 sorted_list = sorted(result_dict.items(), key=operator.itemgetter(1))
 print(

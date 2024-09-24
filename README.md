@@ -21,9 +21,7 @@
 
 ## Inspiration
 
-Before I discovered my passion for software engineering, I was a middle school special educator in Brooklyn, NY. As a teacher, I found that music was such a powerful way to help my students learn language since they all had a natural connection to it and it provided a context for their learning. Drawing from my experiences in the classroom, I was inspired to create Lyrics For Learning.
-
-Initially, Lyrics for Learning was going to solely allow students to check out linguistic breakdowns for words within songs. However, after reflecting upon how I leveraged music in my own classroom and getting feedback from other teachers, I decided to also allow users to share their own interpretations of what words mean within songs. By exploring both the literal and figurative meaning of words in songs they know, students can deepen their understanding of the English language in a context that is familiar to them.
+The inspiration behind the project was based on the fact that I had a thought about how useful it would have been if I had such an app as I tried to learn a foreign language online. I saw it easier learning through lyrics from songs in different languages and learning the meaning of the words used, their pronunciations and antonation when using the words during communication.
 
 ## Built With
 
@@ -56,19 +54,19 @@ When a user selects a song, they are re-directed to a song-specific page where t
 ### **Linguistic Breakdown and Highlighting of Words**
 
 
-When a user selects a specific word from a song, the linguistic breakdown is fetched from the external Words API. The JS script will then create a menu based the number of entries available for the word. When a user clicks on one of the entries, the script will then see what sections are available for that entry (ex: "Definition", "Synonyms", "Examples"). The available sections and their content will populate a dynamic tabbed interface for the user to browse. In addition, the word is highlighted in the lyrics. This was made possible by first parsing the lyrics and adding span elements around words that appear in the "Pick a word to explore!" list. The spans have aligned classes added to them that allow them to be targeted and thus highlighted when a word is selected.
+The external Words API is accessed to retrieve the linguistic breakdown when a user chooses a particular word from a song. After that, a menu will be created by the JS script depending on how many items are available for the word. The script will then determine which parts are available for an entry (such as "Definition," "Synonyms," or "Examples") when a user clicks on it. The user can browse a dynamic tabbed interface filled with the accessible sections and their contents. Furthermore, the lyrics highlight the term. By first analyzing the lyrics and inserting span elements around words that show up in the "Pick a word to explore!" list, this was made possible. Aligned classes have been added to the spans so they can be chosen so that it can be noticed and targeted.
 
 # ![linguistic-breakdown-and-highlighting-of-words](https://i.imgur.com/YKhWuCj.png)
 
 ### **Submit Interpretations and View Past Interpretations**
 
-After exploring the linguistic breakdown of a word, the user can share what they think the artist means by the word. When they press "Submit", their interpretation is sent as a `POST` request to the internal RESTful API. The `better-profanity` module is then used to check the interpretation for profanity and if so, the submission is not stored in the database and a warning dialog is displayed to the user. If there is no profanity, the submission is stored in the database and can be seen in the "Latest Interpretations" section, which is an accordian-style display.
+The user can contribute their interpretation of the artist's meaning behind a word after studying its grammatical breakdown. Their interpretation is provided as a `POST` request to the internal RESTful API when they click "Submit". The interpretation is then checked for profanity using the `better-profanity` module; if it is, the contribution is not saved in the database and the user is shown with a warning popup. The input is kept in the database and viewed in the accordian-style "Latest Interpretations" section if it contains no profanity.
 
 # ![submit-interpretations-and-view-past-interpretations](https://i.imgur.com/lAmK39I.png)
 
 ### **Suggest a Song Form**
 
-If a user would like to suggest a song to be added to the collection of songs to learn from, they can visit the "Suggest a Song" page and fill out the form. The form will ask for all necessary attributes for creating a new Song object including the song's artist, title, and words to learn from. The user must also submit their email and name so they can be notified if the song is added to the collection and receive credit for their contribution.
+A user can visit the "Suggest a Song" page and complete the form if they would like to recommend a song to be added to the library of songs to learn from. The artist, title, and words to be learned from the song are among the details the form will need in order to create a new Song object. In order to earn credit for their contribution and to be alerted when the song is added to the collection, the user must additionally provide their name and email address.
 
 # ![suggest-a-song-form](https://i.imgur.com/jspGhrb.png)
 
@@ -125,9 +123,10 @@ I built an internal RESTful API for this web application so that data can be fle
      
 ## Future
 
-Beyond this initial MVP which was built in 2 weeks, I would like to continue to add many more features to Lyrics For Learning. In particular, I would like to setup an authentication system. With this, I would also like to enable users to have profiles so they can check out their past progress and further personalize the experience by suggesting songs and words to explore based on past use. In addition, I'd like to allow users to edit past submissions and upvote each other's interpretations as well. I am also considering adding a "Top Users" board on the homepage too.
+The Lyrical Lord has a lot more features that I would like to add in the future, beyond this original MVP that was created in just two weeks. I want to build up an authentication system specifically. Along with this, I would also like to make it possible for users to create profiles, which would allow them to view their previous progress and further customize the experience by offering phrases and songs to listen to or explore depending on previous usage. Furthermore, I would like to enable people to modify previously submitted work and to support and encourage one another's interpretations. Additionally, I'm thinking about including a "Top Users" board on the front page.
 
-If you have any feedback (ex: feature ideas) or would like to contribute to this project, please feel free to contact me.
+Please don't hesitate to get in touch with me if you would want to help to this project or if you have any suggestions for features.
+
 
 ## Attributions
 
@@ -140,13 +139,7 @@ Licenses for images from Wikimedia Commons:
 * [Paul Simonon The Clash September 20 1979 Palladium NYC.jpg](https://commons.wikimedia.org/wiki/File:Paul_Simonon_The_Clash_September_20_1979_Palladium_NYC.jpg)
 
 ## Author
-### **David Kwan**
+### **Moses Ng'ang'a**
 
-David Kwan is a former teacher and current full stack software engineer with a passion for creating products that connect and empower others. He used his skills on the back-end and front-end to create Lyrics for Learning.
-
-[Github](https://github.com/dwkwan)
-[LinkedIn](https://www.linkedin.com/in/david-kwan-1b0930129/)
-[Twitter](https://twitter.com/davidwkwan)
-
-
-
+[Github](https://github.com/Moseh-25-sudo)
+[LinkedIn](https://www.linkedin.com/in/SEMosesNganga)
